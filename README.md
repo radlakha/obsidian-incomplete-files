@@ -95,3 +95,17 @@ Notes by Raman Adlakha on 2023-02-13 13:18
 ```bash
 curl -fsSL https://bun.sh/install | bash
 ```
+- Upgraded esbuild to 0.18.20 after `bun install` complained about it.
+```
+npm install esbuild@0.18.20
+```
+- Installed typescript on the dev machine.
+```
+npm install -g typescript
+```
+- Pushed code to remote repository successfully.
+- For future use:
+```bash
+remote: Create a pull request for 'feature/IssueTypeTODO' on GitHub by visiting:
+remote:      https://github.com/radlakha/obsidian-incomplete-files/pull/new/feature/IssueTypeTODO
+```
