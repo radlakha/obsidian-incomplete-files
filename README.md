@@ -88,24 +88,3 @@ export type IssueScanner = {
 If you are enjoying this plugin then please support my work and enthusiasm by sponsoring me on Github or buying me a coffee on <https://www.buymeacoffee.com/yomaru>.
 
 <a href="https://www.buymeacoffee.com/yomaru" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 105px !important;" ></a> [![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/hananoshikayomaru)
-
-Notes by Raman Adlakha on 2023-02-13 13:18
-
-- Use the following command to install the Bun package manager:
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
-- Upgraded esbuild to 0.18.20 after `bun install` complained about it.
-```
-npm install esbuild@0.18.20
-```
-- Installed typescript on the dev machine.
-```
-npm install -g typescript
-```
-- Pushed code to remote repository successfully.
-- For future use:
-```bash
-remote: Create a pull request for 'feature/IssueTypeTODO' on GitHub by visiting:
-remote:      https://github.com/radlakha/obsidian-incomplete-files/pull/new/feature/IssueTypeTODO
-```

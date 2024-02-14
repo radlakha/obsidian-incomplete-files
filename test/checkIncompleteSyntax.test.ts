@@ -76,4 +76,25 @@ Content here.
 			/H3 Heading 3 is incomplete because not enough content/
 		);
 	});
+	test("should identify multiple todo syntax and corresponding headings", () => {
+		const markdown = `
+# Heading 1
+Content here.
+%%   TODO(Do something here) %%
+## Heading 2
+Content here.
+%%   TODO(Write an explanation) %%
+### Heading 3
+Content here.
+%%   TODO(Check this in) %%
+`;
+		const data = getDataFromTextSync(markdown);
+		const result = checkIncompleteSyntax.func(mockFile, data);
+		expect(result.length).toBe(3);
+		expect(result[0]?.title).toMatch(/H1 Heading 1 Do something here/);
+		expect(result[0]?.heading).toBeDefined();
+		expect(result[1]?.title).toMatch(/H2 Heading 2 Write an explanation/);
+		expect(result[1]?.heading).toBeDefined();
+		expect(result[2]?.title).toMatch(/H3 Heading 3 Check this in/);
+	});
 });
