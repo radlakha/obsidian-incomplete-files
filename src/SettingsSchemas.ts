@@ -39,6 +39,7 @@ export type IncompleteFile = z.infer<typeof fileSchema>;
 export const SettingSchema = z.object({
 	[INCOMPLETE_ISSUE_TYPE.EMPTY_CONTENT_HEADING]: z.boolean().default(true),
 	[INCOMPLETE_ISSUE_TYPE.INCOMPLETE_SYNTAX]: z.boolean().default(true),
+	[INCOMPLETE_ISSUE_TYPE.TODO_SYNTAX]: z.boolean().default(true),
 	ignoreFoldersString: z.string().default(""),
 	incompleteFiles: fileSchema.array().default([]),
 	completeProperty: z.string().default(""),

@@ -6,7 +6,7 @@ import type { IssueScanner } from "@/rules/issueScanners";
 import type { RawIssue } from "@/SettingsSchemas";
 import type { Heading, Node, Text } from "mdast";
 import { nodeToString } from "@/util/nodeToString";
-import exp from "constants";
+/* import exp from "constants"; */
 
 /**
  *	%% TODO(issue which is a string) %%
