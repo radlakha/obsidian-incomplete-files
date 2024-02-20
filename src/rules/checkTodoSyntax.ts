@@ -13,7 +13,7 @@ import exp from "constants";
  *	%% TODO %%
  */
 
- const syntaxRegex = /%%\s*TODO(?:\(([^)]+)\))?\s*%%/g;
+const syntaxRegex = /%%\s*TODO(?:\(([^)]+)\))?\s*%%/g;
 
 export const checkTodoSyntax: IssueScanner = {
 	icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-check"><path d="M5 12l5 5L19 6"/></svg>`,
@@ -39,13 +39,8 @@ export const checkTodoSyntax: IssueScanner = {
 				const matches = (node as Text).value.matchAll(syntaxRegex);
 
 				for (const match of matches) {
-					const issue = match[1] ?? "some issues"; // Capture the todo issue
-					const title = currentHeading
-						? `H${currentHeading.depth} ${nodeToString(
-								// @ts-ignore
-								currentHeading
-						  )} has a todo because ${issue}`
-						: `file has a todo because ${issue}`;
+					const issue = match[1] ?? "TODO not described"; // Capture the todo issue
+					const title = currentHeading ? `${issue}` : `${issue}`;
 
 					issues.push({
 						type: INCOMPLETE_ISSUE_TYPE.TODO_SYNTAX,
