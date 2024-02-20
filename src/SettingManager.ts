@@ -113,6 +113,7 @@ export class MySettingManager implements ISettingManager<Setting> {
 export const DEFAULT_SETTING: Setting = {
 	[INCOMPLETE_ISSUE_TYPE.EMPTY_CONTENT_HEADING]: true,
 	[INCOMPLETE_ISSUE_TYPE.INCOMPLETE_SYNTAX]: true,
+	[INCOMPLETE_ISSUE_TYPE.TODO_SYNTAX]: true,
 	ignoreFoldersString: "",
 	incompleteFiles: [],
 	completeProperty: "",
