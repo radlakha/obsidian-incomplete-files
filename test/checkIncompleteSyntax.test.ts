@@ -91,10 +91,10 @@ Content here.
 		const data = getDataFromTextSync(markdown);
 		const result = checkIncompleteSyntax.func(mockFile, data);
 		expect(result.length).toBe(3);
-		expect(result[0]?.title).toMatch(/H1 Heading 1 Do something here/);
+		expect(result[0]?.title).toMatch(/H1 Heading 1 has a todo because Do something here/);
 		expect(result[0]?.heading).toBeDefined();
-		expect(result[1]?.title).toMatch(/H2 Heading 2 Write an explanation/);
+		expect(result[1]?.title).toMatch(/H2 Heading 2 has a todo because Write an explanation/);
 		expect(result[1]?.heading).toBeDefined();
-		expect(result[2]?.title).toMatch(/H3 Heading 3 Check this in/);
+		expect(result[2]?.title).toMatch(/H3 Heading 3 has a todo because Check this in/);
 	});
 });
