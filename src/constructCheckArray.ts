@@ -5,6 +5,7 @@ import type { TFile } from "obsidian";
 import type { RawIssue } from "@/SettingsSchemas";
 import { checkEmptyContentHeading } from "@/rules/checkEmptyContentHeading";
 import { checkIncompleteSyntax } from "@/rules/checkIncompleteSyntax";
+import { checkTodoSyntax } from "@/rules/checkTodoSyntax";
 import { INCOMPLETE_ISSUE_TYPE } from "./rules/INCOMPLETE_ISSUE_TYPE";
 
 /**
@@ -21,5 +22,7 @@ export const constructScanArray = (plugin: IncompleteFilesPlugin) => {
 		checkArray.push(checkEmptyContentHeading.func);
 	if (setting[INCOMPLETE_ISSUE_TYPE.INCOMPLETE_SYNTAX])
 		checkArray.push(checkIncompleteSyntax.func);
+	if (setting[INCOMPLETE_ISSUE_TYPE.TODO_SYNTAX])
+		checkArray.push(checkTodoSyntax.func);
 	return checkArray;
 };
